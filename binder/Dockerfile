@@ -6,4 +6,4 @@ FROM ghcr.io/ihaskell/ihaskell-notebook:master
 
 #COPY notebooks notebooks
 
-COPY notebooks /home/jovyan/notebooks
+#COPY notebooks /home/jovyan/notebooks
