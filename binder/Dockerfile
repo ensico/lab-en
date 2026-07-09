@@ -2,6 +2,6 @@
 
 FROM ghcr.io/ihaskell/ihaskell-notebook:latest
 
-WORKDIR /home/jovyan
+#WORKDIR /home/jovyan
 
-COPY notebooks notebooks
+#COPY notebooks notebooks
