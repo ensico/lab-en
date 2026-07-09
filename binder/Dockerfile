@@ -2,8 +2,6 @@
 
 FROM ghcr.io/ihaskell/ihaskell-notebook:master
 
-#WORKDIR /home/jovyan
+COPY notebooks /home/jovyan/notebooks
 
-#COPY notebooks notebooks
-
-#COPY notebooks /home/jovyan/notebooks
+WORKDIR /home/jovyan/notebooks
