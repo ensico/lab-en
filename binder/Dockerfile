@@ -18,6 +18,6 @@ RUN rm -rf \
 USER ${NB_UID}
 
 # Copy your notebooks
-COPY notebooks/ /home/jovyan/notebooks/
+#COPY notebooks/ /home/jovyan/notebooks/
 
 WORKDIR /home/jovyan
