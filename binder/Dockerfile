@@ -20,12 +20,12 @@ RUN mkdir -p /home/jovyan/notebooks
 
 USER ${NB_UID}
 
-# Copy your notebooks
-#COPY notebooks/ /home/jovyan/notebooks/
+# Copy your notebooks and JupyterLab config
 COPY --chown=jovyan notebooks/ /home/jovyan/notebooks/
 COPY --chown=jovyan config/ /home/jovyan/.jupyter/
-EXPOSE 8888
-CMD jupyter-lab --ip=0.0.0.0
 
-WORKDIR /home/jovyan
+# Let Binder / JupyterHub start the single-user server itself.
+# Do NOT add a CMD that runs `jupyter-lab` here — it breaks the
+# Binder server connection ("Server Connection Error").
+ENV JUPYTER_ENABLE_LAB=yes
 
