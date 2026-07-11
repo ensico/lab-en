@@ -15,9 +15,13 @@ RUN rm -rf \
     /root/.cache \
     /root/.stack
 
+# Create target directory
+RUN mkdir -p /home/jovyan/notebooks
+
 USER ${NB_UID}
 
 # Copy your notebooks
-#COPY notebooks/ /home/jovyan/notebooks/
+COPY notebooks/ /home/jovyan/notebooks/
 
 WORKDIR /home/jovyan
+
