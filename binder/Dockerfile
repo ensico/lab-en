@@ -10,9 +10,9 @@ RUN apt-get clean && \
 
 RUN rm -rf \
     /home/jovyan/ihaskell_examples \
-    /home/jovyan/work
-    /home/jovyan/.cache
-    /root/.cache
+    /home/jovyan/work \
+    /home/jovyan/.cache \
+    /root/.cache \
     /root/.stack
 
 USER ${NB_UID}
