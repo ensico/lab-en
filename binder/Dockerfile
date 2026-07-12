@@ -25,11 +25,12 @@ COPY --chown=jovyan notebooks/ /home/jovyan/notebooks/
 COPY --chown=jovyan config/ /home/jovyan/.jupyter/
 
 WORKDIR /home/jovyan/notebooks
-EXPOSE 8888
-CMD ["jupyter-lab", "--ip=0.0.0.0", "--ServerApp.token="]
+
+#EXPOSE 8888
+#CMD jupyter-lab --ip=0.0.0.0
 
 # Let Binder / JupyterHub start the single-user server itself.
 # Do NOT add a CMD that runs `jupyter-lab` here — it breaks the
 # Binder server connection ("Server Connection Error").
-#ENV JUPYTER_ENABLE_LAB=yes
+ENV JUPYTER_ENABLE_LAB=yes
 
